@@ -4,11 +4,11 @@ docker build -t dado83/multi-worker:latest -t dado83/multi-worker:$SHA -f ./work
 
 docker push dado83/multi-client:latest
 docker push dado83/multi-server:latest
-docker push doda83/multi-worker:latest
+docker push dado83/multi-worker:latest
 
 docker push dado83/multi-client:$SHA
 docker push dado83/multi-server:$SHA
-docker push doda83/multi-worker:$SHA
+docker push dado83/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=dado83/multi-server:$SHA
